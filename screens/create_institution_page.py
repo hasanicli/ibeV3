@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QApplication, QWidget, QAction
+from PyQt5.QtWidgets import QApplication, QWidget, QAction, QMessageBox
 import sys
 from screens.add_institution_info_python import Ui_Form
 from connectionDB import DbManager
@@ -19,10 +19,13 @@ class InstitutionWindow(QWidget):
         self.ui.btn_save.clicked.connect(self.recorder)
 
     def recorder(self):
-        li = [self.ui.le_city.text(), self.ui.le_county.text(), self.ui.le_school_name.text(), find_id_number(self.ui.cmb_school_manager.currentText()),
-              find_id_number(self.ui.cmb_manager_asistant.currentText()), self.ui.le_phone1.text(), self.ui.le_phone2.text(), self.ui.le_email.text()]
-        self.connection.deleter(f"""DELETE FROM school_info WHERE id = 1 """)
-        self.connection.recorder(f"""INSERT INTO school_info VALUES(1, "{li[0]}", "{li[1]}", "{li[2]}", "{li[3]}", "{li[4]}", "{li[5]}", "{li[6]}", "{li[7]}")""")
+        if self.ui.cmb_manager_asistant.currentText() != "" or self.ui.cmb_school_manager.currentText() != "":
+            li = [self.ui.le_city.text(), self.ui.le_county.text(), self.ui.le_school_name.text(), find_id_number(self.ui.cmb_school_manager.currentText()),
+                  find_id_number(self.ui.cmb_manager_asistant.currentText()), self.ui.le_phone1.text(), self.ui.le_phone2.text(), self.ui.le_email.text()]
+            self.connection.deleter(f"""DELETE FROM school_info WHERE id = 1 """)
+            self.connection.recorder(f"""INSERT INTO school_info VALUES(1, "{li[0]}", "{li[1]}", "{li[2]}", "{li[3]}", "{li[4]}", "{li[5]}", "{li[6]}", "{li[7]}")""")
+        else:
+            QMessageBox.warning(None, "Uyarı", "Önce personel bilgisi girilmeli")
 
     def staff_loader(self):
         self.ui.cmb_manager_asistant.clear()
@@ -32,17 +35,20 @@ class InstitutionWindow(QWidget):
         self.ui.cmb_manager_asistant.addItems(get_list_personal(data))
 
     def data_loader(self):
-        info_list = list(self.connection.selector(f""" SELECT city, county, name, managerID, coordinator_managerID, phone_number1,phone_number2, email FROM school_info WHERE id=1 """)[0])
-        obj_list = [self.ui.le_city, self.ui.le_county, self.ui.le_school_name, self.ui.cmb_school_manager, self.ui.cmb_manager_asistant, self.ui.le_phone1, self.ui.le_phone2, self.ui.le_email]
-        for number, obj in enumerate(obj_list):
-            if obj.objectName().startswith("le"):
-                obj.setText(info_list[number])
-            elif obj.objectName().startswith("cmb"):
-                person_name = ""
-                for key, val in person_dict.items():
-                    if info_list[number] == val[2]:
-                        person_name = str(val[0]) + " " + str(val[1]) + " " + str(key)
-                obj.setCurrentText(person_name)
+        if self.ui.cmb_manager_asistant.currentText() != "":
+            info_list = list(self.connection.selector(f""" SELECT city, county, name, managerID, coordinator_managerID, phone_number1,phone_number2, email FROM school_info WHERE id=1 """)[0])
+            obj_list = [self.ui.le_city, self.ui.le_county, self.ui.le_school_name, self.ui.cmb_school_manager, self.ui.cmb_manager_asistant, self.ui.le_phone1, self.ui.le_phone2, self.ui.le_email]
+            for number, obj in enumerate(obj_list):
+                if obj.objectName().startswith("le"):
+                    obj.setText(info_list[number])
+                elif obj.objectName().startswith("cmb"):
+                    person_name = ""
+                    for key, val in person_dict.items():
+                        if info_list[number] == val[2]:
+                            person_name = str(val[0]) + " " + str(val[1]) + " " + str(key)
+                    obj.setCurrentText(person_name)
+        else:
+            QMessageBox.warning(None, "Uyarı", "Önce personel bilgisi girilmeli")
 
     def closeEvent(self, event):
         self.connection.db_closer()

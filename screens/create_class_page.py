@@ -43,17 +43,20 @@ class ClassWindow(QWidget):
         return [self.ui.lw_class.item(index).text() for index in range(self.ui.lw_class.count())]
 
     def recorder(self):
-        lw_items = self.get_list_widgets_items()
-        class_name = tr_upper(stripper(self.ui.le_class.text()))
-        if general_name_control(class_name, lw_items):
-            department_id = self.connection.find(f"""SELECT id FROM departments WHERE name = "{self.ui.cmb_department.currentText()}" """)
-            self.connection.recorder(f"""INSERT INTO classes(name, departmentID) VALUES("{class_name}", {department_id})""")
-            class_id = self.connection.find(f"""SELECT id FROM classes WHERE name = "{class_name}" """)
-            day_id_list = [self.connection.find(f""" SELECT id FROM days WHERE name="{i}" """) for i in [i.text() for i in self.ui.groupBox.findChildren(QCheckBox) if i.isChecked()]]
-            for day_id in day_id_list:
-                self.connection.recorder(f"""INSERT INTO classes_days(classID,dayID) VALUES({class_id}, {day_id})""")
-            self.class_loader()
-            focus_item(self.ui.le_class)
+        if self.ui.cmb_department.currentText() != "":
+            lw_items = self.get_list_widgets_items()
+            class_name = tr_upper(stripper(self.ui.le_class.text()))
+            if general_name_control(class_name, lw_items):
+                department_id = self.connection.find(f"""SELECT id FROM departments WHERE name = "{self.ui.cmb_department.currentText()}" """)
+                self.connection.recorder(f"""INSERT INTO classes(name, departmentID) VALUES("{class_name}", {department_id})""")
+                class_id = self.connection.find(f"""SELECT id FROM classes WHERE name = "{class_name}" """)
+                day_id_list = [self.connection.find(f""" SELECT id FROM days WHERE name="{i}" """) for i in [i.text() for i in self.ui.groupBox.findChildren(QCheckBox) if i.isChecked()]]
+                for day_id in day_id_list:
+                    self.connection.recorder(f"""INSERT INTO classes_days(classID,dayID) VALUES({class_id}, {day_id})""")
+                self.class_loader()
+                focus_item(self.ui.le_class)
+        else:
+            QMessageBox.warning(None, "Uyarı", "Alan bilgisi olmalı")
 
     def updater(self):
         item = self.ui.lw_class.currentItem()
@@ -146,7 +149,7 @@ class ClassWindow(QWidget):
     def class_loader(self):
         self.ui.lw_class.clear()
         self.unset_checkbox()
-        if self.ui.cmb_department is not None:
+        if self.ui.cmb_department.currentText() != "":
             department_id = self.connection.find(f"""SELECT id FROM departments WHERE name = "{self.ui.cmb_department.currentText()}" """)
             data = self.connection.selector(f"""SELECT name FROM classes WHERE departmentID={department_id}""")
             self.ui.lw_class.addItems(get_list_general(data))

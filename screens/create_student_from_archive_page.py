@@ -19,13 +19,10 @@ class StudentFromArchiveWindow(QMainWindow):
         self.connection = DbManager()
         get_out = QAction("Quit", self)
         get_out.triggered.connect(self.closeEvent)
+
         self.file_address = ""
-        self.student_loader()
-        self.department_loader()
-        self.branch_loader()
-        self.class_loader()
-        self.workplace_loader()
-        self.date_loader()
+        self.initialize_loader()
+
         self.ui.cmb_department.currentTextChanged.connect(self.branch_loader)
         self.ui.cmb_department.currentTextChanged.connect(self.class_loader)
         self.ui.cmb_branch.currentTextChanged.connect(self.workplace_loader)
@@ -33,6 +30,14 @@ class StudentFromArchiveWindow(QMainWindow):
         self.ui.btn_delete.clicked.connect(lambda: message_box("şimdilik silemezsiniz\nsilersek işletme kayıtları da silinir"))
         self.ui.btn_edit.clicked.connect(lambda: self.obj_control(self.updater, self.ui.lw_students))
         self.ui.btn_clear_all.clicked.connect(lambda: self.ui.lw_students.setCurrentItem(None))
+
+    def initialize_loader(self):
+        self.student_loader()
+        self.department_loader()
+        self.branch_loader()
+        self.class_loader()
+        self.workplace_loader()
+        self.date_loader()
 
     def obj_control(self, func, obj):
         if func.__name__ != "data_loader" and obj.currentItem() is None:
@@ -77,7 +82,7 @@ class StudentFromArchiveWindow(QMainWindow):
         school_number = info[3]
         father_name = info[7]
         mother_name = info[8]
-        birthdate = info[9]
+        birthdate = QDate.fromString(info[9], "yyyy-MM-dd")
         birth_place = info[10]
         self_phone = info[12]
         parent_phone1 = info[13]
@@ -120,18 +125,20 @@ class StudentFromArchiveWindow(QMainWindow):
 
     def branch_loader(self):
         department_name = self.ui.cmb_department.currentText()
-        department_id = self.connection.find(f"""SELECT id FROM departments WHERE name = "{department_name}" """)
-        self.ui.cmb_branch.clear()
-        data = self.connection.selector(f"SELECT name FROM branches WHERE departmentID={department_id}")
-        self.ui.cmb_branch.addItems(get_list_general(data))
+        if department_name != "":
+            department_id = self.connection.find(f"""SELECT id FROM departments WHERE name = "{department_name}" """)
+            self.ui.cmb_branch.clear()
+            data = self.connection.selector(f"SELECT name FROM branches WHERE departmentID={department_id}")
+            self.ui.cmb_branch.addItems(get_list_general(data))
 
     def class_loader(self):
         department_name = self.ui.cmb_department.currentText()
-        department_id = self.connection.find(f"""SELECT id FROM departments WHERE name = "{department_name}" """)
-        self.ui.cmb_class.clear()
-        data = self.connection.selector(f"""SELECT name FROM classes WHERE departmentID={department_id}""")
-        self.ui.cmb_class.addItem("")
-        self.ui.cmb_class.addItems(get_list_general(data))
+        if department_name != "":
+            department_id = self.connection.find(f"""SELECT id FROM departments WHERE name = "{department_name}" """)
+            self.ui.cmb_class.clear()
+            data = self.connection.selector(f"""SELECT name FROM classes WHERE departmentID={department_id}""")
+            self.ui.cmb_class.addItem("")
+            self.ui.cmb_class.addItems(get_list_general(data))
 
     def workplace_loader(self):
         self.ui.cmb_workplace.clear()
@@ -140,26 +147,32 @@ class StudentFromArchiveWindow(QMainWindow):
         self.ui.cmb_workplace.addItem("Okul")
         self.ui.cmb_workplace.addItems(get_list_general(data))
 
-    def clean_data(self):
-        self.ui.le_id_number.clear()
-        self.ui.le_name.clear()
-        self.ui.le_surname.clear()
-        self.ui.le_number.clear()
-        self.ui.le_father_name.clear()
-        self.ui.le_mother_name.clear()
-        self.ui.le_birth_place.clear()
-        self.ui.cmb_department.setCurrentIndex(0)
-        self.ui.cmb_workplace.setCurrentIndex(0)
-        self.ui.le_coordinator.clear()
-        self.ui.le_self_phone.clear()
-        self.ui.le_father_phone.clear()
-        self.ui.le_mother_phone.clear()
-        self.ui.le_email.clear()
-        self.ui.lbl_photo.clear()
-        self.file_address = ""
-        self.date_loader()
-        self.branch_loader()
-        self.class_loader()
+    @staticmethod
+    def clean_data():
+        StudentWindow().clean_data()
+
+        # self.ui.le_coordinator.clear()
+        # self.ui.le_self_phone.clear()
+        # self.ui.le_father_phone.clear()
+        # self.ui.le_mother_phone.clear()
+        # self.ui.le_email.clear()
+        # self.ui.lbl_photo.clear()
+        #
+        # self.ui.le_father_name.clear()
+        # self.ui.le_number.clear()
+        # self.ui.le_mother_name.clear()
+        # self.ui.le_birth_place.clear()
+        # self.ui.le_name.clear()
+        # self.ui.le_surname.clear()
+        #
+        # self.ui.cmb_department.setCurrentIndex(0)
+        # self.ui.cmb_workplace.setCurrentIndex(0)
+        # self.ui.le_id_number.clear()
+        #
+        # self.file_address = ""
+        # self.date_loader()
+        # self.branch_loader()
+        # self.class_loader()
 
     def closeEvent(self, event):
         self.connection.db_closer()

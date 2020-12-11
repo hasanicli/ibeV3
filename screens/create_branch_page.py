@@ -31,14 +31,17 @@ class BranchWindow(QWidget):
         return [self.ui.lw_branch.item(index).text() for index in range(self.ui.lw_branch.count())]
 
     def recorder(self):
-        lw_items = self.get_list_widgets_items()
-        branch = tr_capitalize(stripper(self.ui.le_branch.text()))
         department = self.ui.cmb_department.currentText()
-        if only_letter_control(branch, lw_items):
-            department_id = self.connection.find(f"""SELECT id FROM departments WHERE name="{department}" """)
-            self.connection.recorder(f"""INSERT INTO branches(name,departmentID) VALUES("{branch}", {department_id})""")
-            self.branch_loader()
-        focus_item(self.ui.le_branch)
+        if department != "":
+            lw_items = self.get_list_widgets_items()
+            branch = tr_capitalize(stripper(self.ui.le_branch.text()))
+            if only_letter_control(branch, lw_items):
+                department_id = self.connection.find(f"""SELECT id FROM departments WHERE name="{department}" """)
+                self.connection.recorder(f"""INSERT INTO branches(name,departmentID) VALUES("{branch}", {department_id})""")
+                self.branch_loader()
+            focus_item(self.ui.le_branch)
+        else:
+            QMessageBox.warning(None, "Uyarı", "Alan bilgisi olmalı")
 
     def updater(self,):
         obj = self.ui.lw_branch.currentItem()

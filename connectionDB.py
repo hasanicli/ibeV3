@@ -16,6 +16,7 @@ class DbManager:
             self.create_database()
 
     def create_database(self):
+        print("geldim")
         current_file_path = os.path.abspath(__file__)
         current_directory = os.path.abspath(os.path.join(current_file_path, os.pardir))
         db_path = os.path.join(current_directory, "ime.db")
@@ -73,6 +74,7 @@ class DbManager:
         self.cur.execute("""INSERT INTO "days" VALUES (5,'Cuma')""")
         self.cur.execute("""INSERT INTO "days" VALUES (6,'Cumartesi')""")
         self.cur.execute("""INSERT INTO "days" VALUES (7,'Pazar')""")
+        self.db.commit()
 
     @staticmethod
     def message_box(p_text):
