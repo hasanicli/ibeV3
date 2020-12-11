@@ -1,6 +1,6 @@
 import sys
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QApplication, QAction
+from PyQt5.QtWidgets import QApplication
 from screens import *
 
 
@@ -19,7 +19,7 @@ class App(MainWindow):
         self.ui.act_staff.triggered.connect(lambda: self.open(StaffWindow))
         self.ui.act_student.triggered.connect(lambda: self.open(StudentWindow))
         self.ui.act_workplace.triggered.connect(lambda: self.open(WorkplaceWindow))
-        self.ui.act_neighborhood.triggered.connect(lambda:self.open(NeighborhoodWindow))
+        self.ui.act_neighborhood.triggered.connect(lambda: self.open(NeighborhoodWindow))
         self.ui.act_cause.triggered.connect(lambda: self.open(CauseWindow))
         self.ui.act_parent_class.triggered.connect(lambda: self.open(ParentClassWindow))
         self.ui.act_staff_workplace.triggered.connect(lambda: self.open(AddWorkplaceToStaff))

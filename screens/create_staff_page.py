@@ -50,15 +50,18 @@ class StaffWindow(QWidget):
             self.generate_value(func)
 
     def generate_value(self, func):
-        dict_kw = {"id_number": self.ui.le_identity_number.text(), "name": tr_capitalize(stripper(self.ui.le_name.text())), "surname": tr_capitalize(stripper(self.ui.le_surname.text())),
-                   "branch_name": self.ui.cmb_staff_branch.currentText(),
-                   "branch_id": self.connection.find(f"""SELECT id FROM staff_branches WHERE name="{self.ui.cmb_staff_branch.currentText()}" """),
-                   "degree_name": self.ui.cmb_staff_degree.currentText(), "degree_id": self.connection.find(f"""SELECT id FROM staff_degrees WHERE name="{self.ui.cmb_staff_degree.currentText()}" """),
-                   "phone": self.ui.le_phone_number.text(), "email": self.ui.le_mail.text()}
+        if self.ui.cmb_staff_branch.currentText() != "" and self.ui.cmb_staff_degree.currentText() != "":
+            dict_kw = {"id_number": self.ui.le_identity_number.text(), "name": tr_capitalize(stripper(self.ui.le_name.text())), "surname": tr_capitalize(stripper(self.ui.le_surname.text())),
+                       "branch_name": self.ui.cmb_staff_branch.currentText(),
+                       "branch_id": self.connection.find(f"""SELECT id FROM staff_branches WHERE name="{self.ui.cmb_staff_branch.currentText()}" """),
+                       "degree_name": self.ui.cmb_staff_degree.currentText(), "degree_id": self.connection.find(f"""SELECT id FROM staff_degrees WHERE name="{self.ui.cmb_staff_degree.currentText()}" """),
+                       "phone": self.ui.le_phone_number.text(), "email": self.ui.le_mail.text()}
 
-        li_days = [i.text() for i in self.ui.groupBox.findChildren(QCheckBox) if i.isChecked()]
+            li_days = [i.text() for i in self.ui.groupBox.findChildren(QCheckBox) if i.isChecked()]
 
-        func(li_days, **dict_kw)
+            func(li_days, **dict_kw)
+        else:
+            QMessageBox.warning(self, "UYARI", "Öğretmen için branş ve ünvan bilgileri olmalı")
 
     def cleaner(self):
         self.ui.lw_staff.setCurrentItem(None)

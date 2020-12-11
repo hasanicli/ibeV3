@@ -47,16 +47,19 @@ class WorkplaceWindow(QWidget):
             func(obj.currentItem())
 
     def generate_value(self, func):
-        gc = "E"
-        if not self.ui.cb_request.isChecked():
-            gc = "H"
-        li_kw = {"wp_name": tr_capitalize(stripper(self.ui.le_workplace_name.text())), "boss": tr_capitalize(stripper(self.ui.le_boss.text())),
-                 "department_id": self.connection.find(f"""SELECT id FROM departments WHERE name = "{self.ui.cmb_department.currentText()}" """),
-                 "wp_mi": tr_capitalize(stripper(self.ui.le_master_instructive.text())),
-                 "neigh_id": self.connection.find(f"""SELECT id FROM neighborhoods WHERE name = "{self.ui.cmb_neighborhood.currentText()}" """),
-                 "street": tr_capitalize(stripper(self.ui.le_street.text())), "address_number": self.ui.le_number.text(), "phone1": self.ui.le_phone1.text(), "phone2": self.ui.le_phone2.text(),
-                 "email": self.ui.le_email.text(), "gc": gc}
-        func(**li_kw)
+        if self.ui.cmb_department.currentText() != "" and self.ui.cmb_neighborhood.currentText() != "":
+            gc = "E"
+            if not self.ui.cb_request.isChecked():
+                gc = "H"
+            li_kw = {"wp_name": tr_capitalize(stripper(self.ui.le_workplace_name.text())), "boss": tr_capitalize(stripper(self.ui.le_boss.text())),
+                     "department_id": self.connection.find(f"""SELECT id FROM departments WHERE name = "{self.ui.cmb_department.currentText()}" """),
+                     "wp_mi": tr_capitalize(stripper(self.ui.le_master_instructive.text())),
+                     "neigh_id": self.connection.find(f"""SELECT id FROM neighborhoods WHERE name = "{self.ui.cmb_neighborhood.currentText()}" """),
+                     "street": tr_capitalize(stripper(self.ui.le_street.text())), "address_number": self.ui.le_number.text(), "phone1": self.ui.le_phone1.text(), "phone2": self.ui.le_phone2.text(),
+                     "email": self.ui.le_email.text(), "gc": gc}
+            func(**li_kw)
+        else:
+            QMessageBox.warning(self, "UYARI", "İşletme için alan ve mahalle bilgileri olmalı")
 
     def cleaner(self):
         self.ui.lw_workplace.setCurrentItem(None)

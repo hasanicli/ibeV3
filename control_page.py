@@ -55,7 +55,8 @@ def is_number(p_text):
 def is_only_letter(p_text):
     letters = ["a", "b", "c", "ç", "d", "e", "f", "g", "ğ", "h", "ı", "i", "j", "k", "l", "m", "n", "o", "ö", "p",
                "r", "s", "ş", "t", "u", "ü", "v", "y", "z", " ", "A", "B", "C", "Ç", "D", "E", "F", "G", "Ğ", "H",
-               "I", "İ", "J", "K", "L", "M", "N", "O", "Ö", "P", "R", "S", "Ş", "T", "U", "Ü", "V", "Y", "Z"]
+               "I", "İ", "J", "K", "L", "M", "N", "O", "Ö", "P", "R", "S", "Ş", "T", "U", "Ü", "V", "Y", "Z",
+               "w", "x", "q", "W", "X", ",Q", "."]
     for letter in p_text:
         if letter not in letters:
             return False
