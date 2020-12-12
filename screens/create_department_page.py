@@ -69,7 +69,6 @@ class DepartmentWindow(QWidget):
 
     def closeEvent(self, event):
         self.connection.db_closer()
-        print(self.connection.connection_state())
 
 
 if __name__ == "__main__":

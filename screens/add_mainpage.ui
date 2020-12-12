@@ -1026,7 +1026,14 @@ QProgressBar::chunk
      <height>21</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuEkle">
+   <widget class="QMenu" name="menuAdd">
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
     <property name="title">
      <string>Ekle</string>
     </property>
@@ -1041,17 +1048,11 @@ QProgressBar::chunk
     <addaction name="act_staff_branch"/>
     <addaction name="act_degree"/>
     <addaction name="separator"/>
-    <addaction name="act_institutation_info"/>
     <addaction name="separator"/>
     <addaction name="act_workplace"/>
     <addaction name="separator"/>
     <addaction name="act_cause"/>
     <addaction name="act_neighborhood"/>
-    <addaction name="act_day"/>
-    <addaction name="act_add_class_to_parent"/>
-    <addaction name="act_staff_workplace"/>
-    <addaction name="act_change_workplace"/>
-    <addaction name="act_disconnection"/>
    </widget>
    <widget class="QMenu" name="menuE_itim_Y_l">
     <property name="title">
@@ -1115,14 +1116,38 @@ QProgressBar::chunk
     <addaction name="actionSGK_Prim_Belgesi_49"/>
     <addaction name="actionSGK_Prim_Belgesi_50"/>
    </widget>
+   <widget class="QMenu" name="menuOperation">
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="title">
+     <string>İşlem</string>
+    </property>
+    <addaction name="act_pull_sutudent"/>
+    <addaction name="act_add_class_to_parent"/>
+    <addaction name="act_staff_workplace"/>
+    <addaction name="act_disconnection"/>
+   </widget>
+   <widget class="QMenu" name="menuSchool_Info">
+    <property name="title">
+     <string>Kurum Bilgileri</string>
+    </property>
+    <addaction name="act_institutation_info"/>
+   </widget>
    <addaction name="menuGiri"/>
    <addaction name="menuE_itim_Y_l"/>
-   <addaction name="menuEkle"/>
+   <addaction name="menuAdd"/>
    <addaction name="menuKontrol"/>
    <addaction name="menuBarkod"/>
    <addaction name="menuVeri_Al"/>
    <addaction name="menuSGK"/>
    <addaction name="menuRaporlama"/>
+   <addaction name="menuOperation"/>
+   <addaction name="menuSchool_Info"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="act_student">
@@ -1505,6 +1530,18 @@ QProgressBar::chunk
   <action name="act_disconnection">
    <property name="text">
     <string>Ayrılış Yap</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+  </action>
+  <action name="act_pull_sutudent">
+   <property name="text">
+    <string>Arşivden Öğrenci Getir</string>
    </property>
    <property name="font">
     <font>
