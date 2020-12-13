@@ -1138,6 +1138,15 @@ QProgressBar::chunk
     </property>
     <addaction name="act_institutation_info"/>
    </widget>
+   <widget class="QMenu" name="menuLoad">
+    <property name="title">
+     <string>Yükleme</string>
+    </property>
+    <addaction name="act_load_workplaces"/>
+    <addaction name="act_load_students"/>
+    <addaction name="act_download_sample_students"/>
+    <addaction name="act_download_sample_workplaces"/>
+   </widget>
    <addaction name="menuGiri"/>
    <addaction name="menuE_itim_Y_l"/>
    <addaction name="menuAdd"/>
@@ -1148,6 +1157,7 @@ QProgressBar::chunk
    <addaction name="menuRaporlama"/>
    <addaction name="menuOperation"/>
    <addaction name="menuSchool_Info"/>
+   <addaction name="menuLoad"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="act_student">
@@ -1542,6 +1552,54 @@ QProgressBar::chunk
   <action name="act_pull_sutudent">
    <property name="text">
     <string>Arşivden Öğrenci Getir</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+  </action>
+  <action name="act_load_workplaces">
+   <property name="text">
+    <string>Excelden İşletme Yükle</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+  </action>
+  <action name="act_load_students">
+   <property name="text">
+    <string>Excelden Öğrenci Yükle</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+  </action>
+  <action name="act_download_sample_students">
+   <property name="text">
+    <string>Öğrenci Yükleme Örnek Dosya Kaydet</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+  </action>
+  <action name="act_download_sample_workplaces">
+   <property name="text">
+    <string>İşletme Yükleme Örnek Dosya Kaydet</string>
    </property>
    <property name="font">
     <font>
