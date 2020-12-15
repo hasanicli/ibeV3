@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>541</width>
-    <height>245</height>
+    <width>676</width>
+    <height>488</height>
    </rect>
   </property>
   <property name="font">
@@ -374,7 +374,7 @@ QStatusBar
       </spacer>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
+      <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,0,10">
        <item>
         <widget class="QLabel" name="label_5">
          <property name="text">

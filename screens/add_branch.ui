@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>435</width>
-    <height>225</height>
+    <width>735</width>
+    <height>512</height>
    </rect>
   </property>
   <property name="font">
@@ -1427,7 +1427,7 @@ QDateEdit::down-arrow:focus
       </widget>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
+      <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,0,10">
        <item>
         <widget class="QLabel" name="label_5">
          <property name="text">

@@ -85,6 +85,16 @@ class DbManager:
             self.cur.execute(p_text)
             self.db.commit()
         except sqlite3.Error as err:
+            if "constraint failed" in str(err):
+                QMessageBox.warning(None, "UYARI !!!", "Bu kayıt daha önce girilmiş. Dal ismi tek olmalı")
+            else:
+                self.message_box(str(err))
+
+    def poly_recorder(self, p_text, p_list):
+        try:
+            self.cur.executemany(p_text, p_list)
+            self.db.commit()
+        except sqlite3.Error as err:
             self.message_box(str(err))
 
     def updater(self, p_text):

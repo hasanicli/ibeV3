@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'C:/Users/Erhan/Desktop/Koordinator/workplace_control/add_department.ui'
+# Form implementation generated from reading ui file 'C:/Users/Erhan/Desktop/Koordinator/ibeV3/screens/add_department.ui'
 #
 # Created by: PyQt5 UI code generator 5.6
 #
@@ -11,7 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(458, 221)
+        Form.resize(802, 530)
         font = QtGui.QFont()
         font.setPointSize(11)
         font.setBold(True)
@@ -344,6 +344,7 @@ class Ui_Form(object):
         self.lw_department = QtWidgets.QListWidget(Form)
         self.lw_department.setObjectName("lw_department")
         self.verticalLayout_2.addWidget(self.lw_department)
+        self.verticalLayout_2.setStretch(2, 10)
         self.horizontalLayout_2.addLayout(self.verticalLayout_2)
         self.horizontalLayout_2.setStretch(0, 60)
         self.horizontalLayout_2.setStretch(2, 40)

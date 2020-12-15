@@ -52,6 +52,14 @@ def is_number(p_text):
     return True
 
 
+def is_only_date(p_text):
+    letters = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-"]
+    for letter in p_text:
+        if letter not in letters:
+            return False
+    return True
+
+
 def is_only_letter(p_text):
     letters = ["a", "b", "c", "ç", "d", "e", "f", "g", "ğ", "h", "ı", "i", "j", "k", "l", "m", "n", "o", "ö", "p",
                "r", "s", "ş", "t", "u", "ü", "v", "y", "z", " ", "A", "B", "C", "Ç", "D", "E", "F", "G", "Ğ", "H",
@@ -132,5 +140,15 @@ def general_name_control(p_text, p_list):
         return False
     elif p_text in p_list:
         message_box("Girdiğiniz isim daha önce kaydedilmiş!")
+        return False
+    return True
+
+
+def is_date(p_text):
+    if p_text == "":
+        message_box("Tarih alanı boşluktan oluşamaz!")
+        return False
+    elif not is_only_date(p_text):
+        message_box("Girdiğiniz veri tarih değil!")
         return False
     return True

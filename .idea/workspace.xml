@@ -5,9 +5,15 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/IME.db" beforeDir="false" afterPath="$PROJECT_DIR$/IME.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connectionDB.py" beforeDir="false" afterPath="$PROJECT_DIR$/connectionDB.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/control_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/control_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/add_mainpage.ui" beforeDir="false" afterPath="$PROJECT_DIR$/screens/add_mainpage.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/add_mainpage_python.py" beforeDir="false" afterPath="$PROJECT_DIR$/screens/add_mainpage_python.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helper_files/workplaces.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/helper_files/workplaces.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/add_branch.ui" beforeDir="false" afterPath="$PROJECT_DIR$/screens/add_branch.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/add_branch_python.py" beforeDir="false" afterPath="$PROJECT_DIR$/screens/add_branch_python.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/add_department.ui" beforeDir="false" afterPath="$PROJECT_DIR$/screens/add_department.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/add_department_python.py" beforeDir="false" afterPath="$PROJECT_DIR$/screens/add_department_python.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/add_neighborhood.ui" beforeDir="false" afterPath="$PROJECT_DIR$/screens/add_neighborhood.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/add_neighborhood_python.py" beforeDir="false" afterPath="$PROJECT_DIR$/screens/add_neighborhood_python.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +58,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="create_staff_page" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="connectionDB" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ibeV3" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -60,12 +66,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/screens" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/screens/create_staff_page.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/connectionDB.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -74,7 +80,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="create_student_from_archive_page" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="create_branch_page" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ibeV3" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -87,7 +93,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/screens/create_student_from_archive_page.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/screens/create_branch_page.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -96,7 +102,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="create_workplace_page" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="create_department_page" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ibeV3" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -109,7 +115,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/screens/create_workplace_page.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/screens/create_department_page.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -118,7 +124,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="create_workplace_to_staff" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="create_neigborhood" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ibeV3" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -131,7 +137,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/screens/create_workplace_to_staff.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/screens/create_neigborhood.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -143,10 +149,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.app" />
-        <item itemvalue="Python.create_student_from_archive_page" />
-        <item itemvalue="Python.create_workplace_to_staff" />
-        <item itemvalue="Python.create_workplace_page" />
-        <item itemvalue="Python.create_staff_page" />
+        <item itemvalue="Python.create_neigborhood" />
+        <item itemvalue="Python.create_branch_page" />
+        <item itemvalue="Python.connectionDB" />
+        <item itemvalue="Python.create_department_page" />
       </list>
     </recent_temporary>
   </component>
@@ -171,6 +177,13 @@
       <workItem from="1607805086744" duration="3661000" />
       <workItem from="1607844710013" duration="22936000" />
       <workItem from="1607876167113" duration="16097000" />
+      <workItem from="1607964485491" duration="3387000" />
+      <workItem from="1607979233257" duration="4631000" />
+      <workItem from="1608006640282" duration="5982000" />
+      <workItem from="1608022994366" duration="7021000" />
+      <workItem from="1608035618982" duration="3476000" />
+      <workItem from="1608051400296" duration="2516000" />
+      <workItem from="1608057472860" duration="4843000" />
     </task>
     <task id="LOCAL-00001" summary="20201212 mainpage revision">
       <created>1607762835821</created>
@@ -204,22 +217,22 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ibeV3$create_student_from_archive_page.coverage" NAME="create_student_from_archive_page Coverage Results" MODIFIED="1607713606989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/screens" />
     <SUITE FILE_PATH="coverage/ibeV3$create_day_page.coverage" NAME="create_day_page Coverage Results" MODIFIED="1607711770983" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/screens" />
-    <SUITE FILE_PATH="coverage/ibeV3$connectionDB.coverage" NAME="connectionDB Coverage Results" MODIFIED="1607631199703" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ibeV3$connectionDB.coverage" NAME="connectionDB Coverage Results" MODIFIED="1608052384370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ibeV3$create_change_workplace.coverage" NAME="create_change_workplace Coverage Results" MODIFIED="1607710917554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/screens" />
-    <SUITE FILE_PATH="coverage/ibeV3$create_neigborhood.coverage" NAME="create_neigborhood Coverage Results" MODIFIED="1607712270129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/screens" />
     <SUITE FILE_PATH="coverage/ibeV3$create_parent_class.coverage" NAME="create_parent_class Coverage Results" MODIFIED="1607712278340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/screens" />
-    <SUITE FILE_PATH="coverage/ibeV3$create_student_page.coverage" NAME="create_student_page Coverage Results" MODIFIED="1607708314168" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/screens" />
+    <SUITE FILE_PATH="coverage/ibeV3$create_neigborhood.coverage" NAME="create_neigborhood Coverage Results" MODIFIED="1608061591230" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/screens" />
+    <SUITE FILE_PATH="coverage/ibeV3$create_student_page.coverage" NAME="create_student_page Coverage Results" MODIFIED="1608037855789" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/screens" />
     <SUITE FILE_PATH="coverage/ibeV3$create_class_to_parent.coverage" NAME="create_class_to_parent Coverage Results" MODIFIED="1607711268021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/screens" />
     <SUITE FILE_PATH="coverage/ibeV3$create_staff_page.coverage" NAME="create_staff_page Coverage Results" MODIFIED="1607712294156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/screens" />
     <SUITE FILE_PATH="coverage/ibeV3$create_cause_page.coverage" NAME="create_cause_page Coverage Results" MODIFIED="1607710855260" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/screens" />
-    <SUITE FILE_PATH="coverage/ibeV3$create_department_page.coverage" NAME="create_department_page Coverage Results" MODIFIED="1607711790246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/screens" />
-    <SUITE FILE_PATH="coverage/ibeV3$create_staff_branch_page.coverage" NAME="create_staff_branch_page Coverage Results" MODIFIED="1607712284352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/screens" />
+    <SUITE FILE_PATH="coverage/ibeV3$create_department_page.coverage" NAME="create_department_page Coverage Results" MODIFIED="1608051936727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/screens" />
     <SUITE FILE_PATH="coverage/ibeV3$create_workplace_to_staff.coverage" NAME="create_workplace_to_staff Coverage Results" MODIFIED="1607712327304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/screens" />
-    <SUITE FILE_PATH="coverage/ibeV3$create_branch_page.coverage" NAME="create_branch_page Coverage Results" MODIFIED="1607711679637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/screens" />
-    <SUITE FILE_PATH="coverage/ibeV3$create_workplace_page.coverage" NAME="create_workplace_page Coverage Results" MODIFIED="1607712317466" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/screens" />
+    <SUITE FILE_PATH="coverage/ibeV3$create_staff_branch_page.coverage" NAME="create_staff_branch_page Coverage Results" MODIFIED="1608028191637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/screens" />
+    <SUITE FILE_PATH="coverage/ibeV3$create_workplace_page.coverage" NAME="create_workplace_page Coverage Results" MODIFIED="1608038934127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/screens" />
+    <SUITE FILE_PATH="coverage/ibeV3$create_branch_page.coverage" NAME="create_branch_page Coverage Results" MODIFIED="1608052734759" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/screens" />
     <SUITE FILE_PATH="coverage/ibeV3$create_institution_page.coverage" NAME="create_institution_page Coverage Results" MODIFIED="1607712244173" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/screens" />
     <SUITE FILE_PATH="coverage/ibeV3$create_degree_page.coverage" NAME="create_degree_page Coverage Results" MODIFIED="1607711780594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/screens" />
-    <SUITE FILE_PATH="coverage/ibeV3$app.coverage" NAME="app Coverage Results" MODIFIED="1607892671162" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ibeV3$app.coverage" NAME="app Coverage Results" MODIFIED="1608065594278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ibeV3$create_disconnection_page.coverage" NAME="create_disconnection_page Coverage Results" MODIFIED="1607711798153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/screens" />
     <SUITE FILE_PATH="coverage/ibeV3$create_class_page.coverage" NAME="create_class_page Coverage Results" MODIFIED="1607711257454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/screens" />
   </component>
